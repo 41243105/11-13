@@ -3,18 +3,18 @@
 #include<stdlib.h>
 using namespace std;
 
-template<typename t>//¥i¥H´À´«¸ê®Æ«¬ºA
+template<typename t>//å¯ä»¥æ›¿æ›è³‡æ–™å‹æ…‹
 
-int BinarySearch(t data[], int n, t target) {//2¤Àªk
+int BinarySearch(t data[], int n, t target) {//2åˆ†æ³•
 	int x = 0, y = n - 1;
-	while (x <= y) {//¦pªG³Ì¤j­È<=³Ì¤p­È ´N·|¤@ª½°õ¦æ
-		int mid = (x + y)/2;//§ä¤¤¶¡­È
-		if (data[mid] == target)return mid;//¦pªGtarget=¤¤¶¡­È ª½±µ¿é¥X¤¤¶¡­È
+	while (x <= y) {//å¦‚æœæœ€å¤§å€¼<=æœ€å°å€¼ å°±æœƒä¸€ç›´åŸ·è¡Œ
+		int mid = (x + y)/2;//æ‰¾ä¸­é–“å€¼
+		if (data[mid] == target)return mid;//å¦‚æœtarget=ä¸­é–“å€¼ ç›´æ¥è¼¸å‡ºä¸­é–“æ•¸
 		if (data[mid] < target) {
-			x = mid + 1;//¦pªGtarget>¤¤¶¡­È ³Ì¤p­È=¤¤¶¡­È+1
+			x = mid + 1;//å¦‚æœtarget>ä¸­é–“å€¼ æœ€å°å€¼=ä¸­é–“å€¼+1
 		}
 		if (data[mid] > target) {
-			y = mid - 1;//¦pªGtarget<¤¤¶¡­È ³Ì¤j­È=¤¤¶¡­È-1
+			y = mid - 1;//å¦‚æœtarget<ä¸­é–“å€¼ æœ€å¤§å€¼=ä¸­é–“å€¼-1
 		}
 	}
 	return -1;
@@ -25,26 +25,26 @@ int main() {
 	char T;
 	cin >> T >> n >> q;
 
-	if (T == 'i') {//¦pªGT¬O¼Æ¦rªº®É­Ô
-		int data[30];//³Ì¦h30­Ó¾ã¼Æ
+	if (T == 'i') {//å¦‚æœTæ˜¯æ•¸å­—çš„æ™‚å€™
+		int data[30];//æœ€å¤š30å€‹æ•´æ•¸
 		for (int i = 0; i< n; i++) {
-			cin >> data[i];//¿é¤J¾ã¼Æ¸ê®Æ
+			cin >> data[i];//è¼¸å…¥æ•´æ•¸è³‡æ–™
 		}
 		for (int j = 1; j <= q; j++) {
 			int target;
-			cin >> target; // ¿é¤J­n§äªº¼Æ¦r
-			cout << BinarySearch(data,n, target) << endl;//±a¨ì2¤Àªkªº¨ç¦¡§ä¨ìtarget
+			cin >> target; // è¼¸å…¥è¦æ‰¾çš„æ•¸å­—
+			cout << BinarySearch(data,n, target) << endl;//å¸¶åˆ°2åˆ†æ³•çš„å‡½å¼æ‰¾åˆ°target
 		}
 	}
-	if (T == 's') {//¦pªGT¬O¦r¦êªº®É­Ô
-		string data[100];//ªø«×¤£¶W¹L100
+	if (T == 's') {//å¦‚æœTæ˜¯å­—ä¸²çš„æ™‚å€™
+		string data[100];//é•·åº¦ä¸è¶…é100
 		for (int i = 0; i < n; i++) {
-			cin >> data[i];//¿é¤J¦r¦ê¸ê®Æ
+			cin >> data[i];//è¼¸å…¥å­—ä¸²è³‡æ–™
 		}
 		for (int j = 1; j <= q; j++) {
 			string target;
-			cin >> target;//¿é¤J­n§äªº¦r¦ê
-			cout << BinarySearch(data, n, target) << endl;//±a¨ì2¤Àªkªº¨ç¦¡§ä¨ìtarget
+			cin >> target;//è¼¸å…¥è¦æ‰¾çš„å­—ä¸²
+			cout << BinarySearch(data, n, target) << endl;//å¸¶åˆ°2åˆ†æ³•çš„å‡½å¼æ‰¾åˆ°target
 		}
 	}
 	return 0;
