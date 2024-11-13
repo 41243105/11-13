@@ -11,10 +11,10 @@ int BinarySearch(t data[], int n, t target) {//2分法
 		int mid = (x + y)/2;//找中間值
 		if (data[mid] == target)return mid;//如果target=中間值 直接輸出中間數
 		if (data[mid] < target) {
-			x = mid + 1;//如果target>中間值 最小值=中間值+1
+			x = mid + 1;//如果target>中間值 最小值=中間數+1
 		}
 		if (data[mid] > target) {
-			y = mid - 1;//如果target<中間值 最大值=中間值-1
+			y = mid - 1;//如果target<中間值 最大值=中間數-1
 		}
 	}
 	return -1;
